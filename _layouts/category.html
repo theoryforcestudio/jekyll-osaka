@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     {% include head.html %}
+    </head>
+    <body>
+        {% include header.html %}
+        <div class="section wf-section">
+            <div class="w-container">
+              <h1 class="post-heading">Posted in "{{ page.title }}"</h1>
+                <div class="content-wrapper w-dyn-list">
+                    <div role="list" class="w-dyn-items">
+                  {% assign cat_pages = site.posts | where:category,page.title | reverse %}
+                  {% for item in cat_pages %}
+                    {% include item.html %}
+                  {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include footer.html %}
+    </body>
+</html>

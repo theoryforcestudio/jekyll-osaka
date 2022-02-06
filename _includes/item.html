@@ -1,0 +1,19 @@
+<div role="listitem" class="blog-post w-dyn-item">
+    {% if item.hero %}
+    <a href="{{item.url}}" class="post-link w-inline-block">
+        <img src="{{ item.hero }}" alt="{{ item.title }}" class="main-image" />
+    </a>
+    {% endif %}
+    <div class="heading-wrapper">
+        <h1 class="blog-headline">{{ item.title}}</h1>
+        <div class="byline-wrapper">
+            <div class="byline-text">{{ item.date | date:"%x"}}</div>
+            <div class="byline-text">IN</div>
+            <a href="/category/{{ item.categories[0] }}"
+            class="byline-link">{{ item.categories[0] | capitalize }}
+            </a>
+        </div>
+    </div>
+    <p class="blog-content">{{ item.description }}</p>
+    <a href="{{ item.url }}" class="link-to-page">Read More</a>
+</div>

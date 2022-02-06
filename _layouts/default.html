@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     {% include head.html %}
+    </head>
+    <body>
+        {% include header.html %}
+        <div class="section wf-section">
+            <div class="w-container">
+                <div class="content-wrapper w-dyn-list">
+                    <div role="list" class="w-dyn-items">
+
+                        {{ content }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include footer.html %}
+    </body>
+</html>
